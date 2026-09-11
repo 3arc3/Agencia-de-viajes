@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vuela. — Agencia de Viajes</title>
+<meta name="description" content="Vuela — Agencia de viajes. Diseñamos escapadas y viajes a medida a los destinos más increíbles del mundo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="navbar">
+  <nav class="nav-inner" aria-label="Navegación principal">
+    <ul class="nav-links">
+      <li><a href="#destinos" class="nav-link-underline"><span class="nav-index">01 /</span> Destinos</a></li>
+      <li><a href="#paquetes" class="nav-link-underline"><span class="nav-index">02 /</span> Paquetes</a></li>
+      <li><a href="#nosotros" class="nav-link-underline"><span class="nav-index">03 /</span> Nosotros</a></li>
+      <li><a href="#contacto" class="nav-link-underline"><span class="nav-index">04 /</span> Contacto</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <span class="nav-email">hola@vuela.com</span>
+      <span class="nav-clock" id="clock" role="status" aria-live="polite">CUP 00:00:00</span>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span id="menuToggleLabel">Menu</span>
+    </button>
+  </nav>
+
+  <div class="mobile-panel-wrap" id="mobilePanelWrap">
+    <div class="mobile-panel">
+      <a href="#destinos" class="mobile-link">01 / Destinos</a>
+      <a href="#paquetes" class="mobile-link">02 / Paquetes</a>
+      <a href="#nosotros" class="mobile-link">03 / Nosotros</a>
+      <a href="#contacto" class="mobile-link">04 / Contacto</a>
+      <div class="mobile-panel-foot">
+        <span class="nav-email">hola@vuela.com</span>
+        <span class="nav-clock" id="clockMobile">CUP 00:00:00</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="hero">
+  <div class="video-stack" aria-hidden="true">
+    <video class="hero-video is-active" data-index="0" autoplay muted loop playsinline
+      src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260629_030107_874273ea-684a-4e90-bb96-8fdfde48d53d.mp4"></video>
+    <video class="hero-video" data-index="1" autoplay muted loop playsinline
+      src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260629_032424_3c9c2a9d-807b-4482-80e6-dd6d9dfd4545.mp4"></video>
+    <video class="hero-video" data-index="2" autoplay muted loop playsinline
+      src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260627_094019_4214ea73-b963-46a4-8327-61489192de99.mp4"></video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+
+    <section class="hero-top" aria-label="Selector de fondo">
+      <div class="video-switcher">
+        <button type="button" class="switch-btn role-link is-active" data-index="0">01 / OCÉANO</button>
+        <button type="button" class="switch-btn role-link" data-index="1">02 / CIUDAD</button>
+        <button type="button" class="switch-btn role-link" data-index="2">03 / HORIZONTE</button>
+      </div>
+
+      <div class="availability" role="status">
+        <span class="dot" id="statusDot"></span>
+        <span>Plazas disponibles</span>
+      </div>
+    </section>
+
+    <section class="hero-bottom">
+      <h1 class="hero-name reveal-up" id="heroName">Vuela<span class="accent-dot" id="nameDot">.</span></h1>
+
+      <div class="hero-cta">
+        <p class="hero-text reveal-right">Diseñamos viajes a medida con destinos únicos, atención cercana y el detalle que hace inolvidable cada aventura.</p>
+        <a href="#contacto" class="cta-button reveal-right" id="ctaButton"><span>reservar ahora</span></a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- ============ DESTINOS ============ -->
+<section id="destinos" class="section">
+  <div class="plane-decor plane-decor--1" aria-hidden="true">
+    <svg viewBox="0 0 48 48" fill="none"><path d="M44 24l-14-4-8-16-4 1 4 15-12 3-4-6-3 1 3 9 3 9 3-1-2-7 12-2 2 16 4-1 2-17 14-4z" fill="currentColor"/></svg>
+  </div>
+
+  <div class="section-inner">
+    <span class="eyebrow">✦ Destinos</span>
+    <h2 class="section-title reveal-up">Explora el mundo<br>con nosotros</h2>
+    <p class="section-lead reveal-right">Trabajamos con más de 120 destinos activos repartidos en los cinco continentes. Cada ficha incluye vuelos, alojamiento seleccionado y traslados, lista para reservar o adaptar a tu medida.</p>
+
+    <div class="filter-tabs" id="filterTabs" role="tablist" aria-label="Filtrar destinos por categoría">
+      <button type="button" class="filter-tab is-active" data-filter="todos">Todos</button>
+      <button type="button" class="filter-tab" data-filter="playa">Playa</button>
+      <button type="button" class="filter-tab" data-filter="ciudad">Ciudad</button>
+      <button type="button" class="filter-tab" data-filter="aventura">Aventura</button>
+      <button type="button" class="filter-tab" data-filter="cultura">Cultura</button>
+      <button type="button" class="filter-tab" data-filter="naturaleza">Naturaleza</button>
+      <button type="button" class="filter-tab" data-filter="crucero">Crucero</button>
+      <button type="button" class="filter-tab" data-filter="montana">Montaña</button>
+      <button type="button" class="filter-tab" data-filter="luna-de-miel">Luna de Miel</button>
+    </div>
+
+    <div class="dest-grid" id="destGrid">
+
+      <article class="dest-card reveal-up" data-cat="playa">
+        <div class="dest-img"><img src="https://picsum.photos/seed/vuela-bali/640/480" alt="Playa en Bali, Indonesia" loading="lazy"></div>
+        <div class="dest-body">
+          <span class="dest-tag">Playa</span>
+          <h3>Bali, Indonesia</h3>
+          <p class="dest-desc">Arrozales, templos y playas de arena volcánica. Ideal para desconectar sin renunciar a la aventura.</p>
+          <div class="dest-foot"><span>7 noches · vuelo + hotel</span><strong>Desde 649€</strong></div>
+        </div>
+      </article>
+
+      <article class="dest-card reveal-up" data-cat="ciudad">
+        <div class="dest-img"><img src="https://picsum.photos/seed/vuela-paris/640/480" alt="Torre Eiffel en París, Francia" loading="lazy"></div>
+        <div class="dest-body">
+          <span class="dest-tag">Ciudad</span>
+          <h3>París, Francia</h3>
+          <p class="dest-desc">Escapada clásica de museos, gastronomía y paseos junto al Sena. Perfecta para un fin de semana largo.</p>
+          <div class="dest-foot"><span>4 noches · vuelo + hotel</span><strong>Desde 289€</strong></div>
+        </div>
+      </article>
+
+      <article class="dest-card reveal-up" data-cat="aventura">
+        <div class="dest-img"><img src="https://picsum.photos/seed/vuela-machupicchu/640/480" alt="Machu Picchu, Perú" loading="lazy"></div>
+        <div class="dest-body">
+          <span class="dest-tag">Aventura</span>
+          <h3>Machu Picchu, Perú</h3>
+          <p class="dest-desc">Trekking por el Camino Inca hasta la ciudadela más famosa de Sudamérica, con guía especializado incluido.</p>
+          <div class="dest-foot"><span>9 noches · vuelo + guía</span><strong>Desde 1.190€</strong></div>
+        </div>
+      </article>
+
+      <article class="dest-card reveal-up" data-cat="cultura">
+        <div class="dest-img"><img src="https://picsum.photos/seed/vuela-kioto/640/480" alt="Templos de Kioto, Japón" loading="lazy"></div>
+        <div class="dest-body">
+          <span class="dest-tag">Cultura</span>
+          <h3>Kioto, Japón</h3>
+          <p class="dest-desc">Templos centenarios, jardines zen y la tradición japonesa más auténtica, lejos del bullicio de Tokio.</p>
+          <div class="dest-foot"><span>8 noches · vuelo + hotel</span><strong>Desde 1.020€</strong></div>
+        </div>
+      </article>
+
+      <article class="dest-card reveal-up" data-cat="aventura">
+        <div class="dest-img"><img src="https://picsum.photos/seed/vuela-marrakech/640/480" alt="Zoco de Marrakech, Marruecos" loading="lazy"></div>
+        <div class="dest-body">
+          <span class="dest-tag">Desierto</span>
+          <h3>Marrakech, Marruecos</h3>
+          <p class="dest-desc">Zocos, riads con encanto y una noche en el desierto de Agafay bajo las estrellas.</p>
+          <div class="dest-foot"><span>5 noches · vuelo + riad</span><strong>Desde 399€</strong></div>
+        </div>
+      </article>
+
+      <article class="dest-card reveal-up" data-cat="ciudad">
+        <div class="dest-img"><img src="https://picsum.photos/seed/vuela-nyc/640/480" alt="Skyline de Nueva York, EE.UU." loading="lazy"></div>
+        <div class="dest-body">
+          <span class="dest-tag">Ciudad</span>
+          <h3>Nueva York, EE.UU.</h3>
+          <p class="dest-desc">La Gran Manzana en estado puro: Broadway, Central Park y los mejores miradores de la ciudad.</p>
+          <div class="dest-foot"><span>6 noches · vuelo + hotel</span><strong>Desde 560€</strong></div>
+        </div>
+      </article>
+
+      <article class="dest-card reveal-up" data-cat="naturaleza">
+        <div class="dest-img"><img src="https://picsum.photos/seed/vuela-kenia/640/480" alt="Safari en Kenia" loading="lazy"></div>
+        <div class="dest-body">
+          <span class="dest-tag">Naturaleza</span>
+          <h3>Masái Mara, Kenia</h3>
+          <p class="dest-desc">Safari fotográfico en 4x4 por la sabana, con posibilidad de ver la Gran Migración según temporada.</p>
+          <div class="dest-foot"><span>8 noches · vuelo + lodge</span><strong>Desde 1.390€</strong></div>
+        </div>
+      </article>
+
+      <article class="dest-card reveal-up" data-cat="crucero">
+        <div class="dest-img"><img src="https://picsum.photos/seed/vuela-mediterraneo/640/480" alt="Crucero por el Mediterráneo" loading="lazy"></div>
+        <div class="dest-body">
+          <span class="dest-tag">Crucero</span>
+          <h3>Mediterráneo Clásico</h3>
+          <p class="dest-desc">Ruta en crucero por Italia, Grecia y Croacia, con pensión completa y excursiones opcionales en cada puerto.</p>
+          <div class="dest-foot"><span>7 noches · crucero + vuelo</span><strong>Desde 780€</strong></div>
+        </div>
+      </article>
+
+      <article class="dest-card reveal-up" data-cat="montana">
+        <div class="dest-img"><img src="https://picsum.photos/seed/vuela-dolomitas/640/480" alt="Dolomitas, Italia" loading="lazy"></div>
+        <div class="dest-body">
+          <span class="dest-tag">Montaña</span>
+          <h3>Dolomitas, Italia</h3>
+          <p class="dest-desc">Rutas de senderismo entre picos alpinos y pueblos de montaña, con alojamiento en refugios y hoteles rurales.</p>
+          <div class="dest-foot"><span>6 noches · vuelo + hotel</span><strong>Desde 520€</strong></div>
+        </div>
+      </article>
+
+      <article class="dest-card reveal-up" data-cat="luna-de-miel">
+        <div class="dest-img"><img src="https://picsum.photos/seed/vuela-maldivas/640/480" alt="Bungalow sobre el agua en Maldivas" loading="lazy"></div>
+        <div class="dest-body">
+          <span class="dest-tag">Luna de Miel</span>
+          <h3>Maldivas</h3>
+          <p class="dest-desc">Bungalows sobre el agua, cenas privadas en la playa y snorkel entre arrecifes de coral. El viaje de novios por excelencia.</p>
+          <div class="dest-foot"><span>7 noches · vuelo + resort</span><strong>Desde 1.890€</strong></div>
+        </div>
+      </article>
+
+      <article class="dest-card reveal-up" data-cat="cultura">
+        <div class="dest-img"><img src="https://picsum.photos/seed/vuela-istanbul/640/480" alt="Mezquita Azul en Estambul, Turquía" loading="lazy"></div>
+        <div class="dest-body">
+          <span class="dest-tag">Cultura</span>
+          <h3>Estambul, Turquía</h3>
+          <p class="dest-desc">El punto exacto donde Europa y Asia se encuentran, con bazares, mezquitas otomanas y cruceros por el Bósforo.</p>
+          <div class="dest-foot"><span>5 noches · vuelo + hotel</span><strong>Desde 349€</strong></div>
+        </div>
+      </article>
+
+      <article class="dest-card reveal-up" data-cat="playa">
+        <div class="dest-img"><img src="https://picsum.photos/seed/vuela-caribe/640/480" alt="Playa del Caribe en República Dominicana" loading="lazy"></div>
+        <div class="dest-body">
+          <span class="dest-tag">Playa</span>
+          <h3>Punta Cana, R. Dominicana</h3>
+          <p class="dest-desc">Todo incluido en primera línea de playa, con aguas turquesa y arena blanca durante todo el año.</p>
+          <div class="dest-foot"><span>7 noches · vuelo + todo incl.</span><strong>Desde 899€</strong></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÓMO TRABAJAMOS ============ -->
+<section id="proceso" class="section section--alt">
+  <div class="section-inner">
+    <span class="eyebrow">✦ Cómo trabajamos</span>
+    <h2 class="section-title reveal-up">De la idea al<br>aeropuerto, en 4 pasos</h2>
+    <p class="section-lead reveal-right">Un proceso claro, sin letra pequeña ni sorpresas de última hora.</p>
+
+    <div class="process-grid">
+      <div class="process-card reveal-up">
+        <span class="process-num">01</span>
+        <h3>Cuéntanos tu idea</h3>
+        <p>Rellenas el formulario o nos llamas y nos cuentas destino, fechas aproximadas, presupuesto y con quién viajas.</p>
+      </div>
+      <div class="process-card reveal-up">
+        <span class="process-num">02</span>
+        <h3>Diseñamos tu propuesta</h3>
+        <p>En menos de 48h te enviamos un itinerario con vuelos, alojamiento y actividades ajustado a lo que nos has contado.</p>
+      </div>
+      <div class="process-card reveal-up">
+        <span class="process-num">03</span>
+        <h3>Ajustamos y confirmamos</h3>
+        <p>Revisamos juntos los detalles, resolvemos dudas y formalizamos la reserva con toda la documentación necesaria.</p>
+      </div>
+      <div class="process-card reveal-up">
+        <span class="process-num">04</span>
+        <h3>Viajas tranquilo</h3>
+        <p>Asistencia telefónica 24/7 durante todo el viaje, por si necesitas cualquier cambio sobre la marcha.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section id="servicios" class="section">
+  <div class="suitcase-decor" aria-hidden="true">
+    <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="16" width="36" height="26" rx="4" stroke="currentColor" stroke-width="2"/><path d="M17 16v-4a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4" stroke="currentColor" stroke-width="2"/><path d="M6 26h36" stroke="currentColor" stroke-width="2"/></svg>
+  </div>
+
+  <div class="section-inner">
+    <span class="eyebrow">✦ Servicios</span>
+    <h2 class="section-title reveal-up">Todo tu viaje,<br>en un mismo sitio</h2>
+    <p class="section-lead reveal-right">Gestionamos cada parte del viaje para que solo tengas que preocuparte de hacer la maleta.</p>
+
+    <div class="service-grid">
+      <div class="service-card reveal-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M21 16v-2l-8-5V4.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2.5 1.8V22l4.5-1 4.5 1v-1.2L13 19v-5.5l8 2.5z" fill="currentColor"/></svg>
+        </div>
+        <h3>Vuelos</h3>
+        <p>Comparamos más de 500 aerolíneas para encontrar la mejor combinación de precio, horario y escalas. Incluye gestión de equipaje y selección de asiento.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 21V8l9-5 9 5v13M3 21h18M7 21v-6h4v6M13 12h4v4h-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Hoteles y alojamiento</h3>
+        <p>Desde hoteles boutique hasta resorts todo incluido, seleccionados personalmente por nuestro equipo tras visitarlos.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3.5v5.2c0 4.6-3 8.8-7 10.3-4-1.5-7-5.7-7-10.3V6.5L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Seguros de viaje</h3>
+        <p>Cobertura médica, de cancelación y de equipaje, con asistencia en más de 40 idiomas las 24 horas del día.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6"/><circle cx="8" cy="18" r="1.4" fill="currentColor"/><circle cx="16" cy="18" r="1.4" fill="currentColor"/></svg>
+        </div>
+        <h3>Alquiler de coches</h3>
+        <p>Vehículos en más de 60 países con recogida y devolución en aeropuerto, seguro a todo riesgo incluido.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Excursiones guiadas</h3>
+        <p>Tours privados y en grupo reducido con guías locales certificados, para descubrir cada destino en profundidad.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h11l5 5v11H4V4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M15 4v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Viajes a medida</h3>
+        <p>Diseñamos tu itinerario ideal según tus tiempos, gustos y presupuesto, con un asesor dedicado a tu viaje.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M20 21v-2a4 4 0 0 0-3-3.87M15 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Viajes en grupo</h3>
+        <p>Organizamos despedidas, viajes de empresa y escapadas de amigos con tarifas especiales a partir de 6 personas.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Lunas de miel</h3>
+        <p>Paquetes exclusivos de recién casados con detalles como upgrades de habitación, cenas privadas y regalos de bienvenida.</p>
+      </div>
+      <div class="service-card reveal-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.6" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Asesoría de visados</h3>
+        <p>Te informamos de los requisitos de entrada de cada país y te ayudamos con la tramitación de visados cuando es necesario.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAQUETES ============ -->
+<section id="paquetes" class="section section--alt">
+  <div class="section-inner">
+    <span class="eyebrow">✦ Paquetes</span>
+    <h2 class="section-title reveal-up">Ofertas del mes</h2>
+    <p class="section-lead reveal-right">Vuelo, hotel y traslados incluidos. Precios por persona en habitación doble, plazas limitadas.</p>
+
+    <div class="package-grid">
+      <article class="package-card reveal-up">
+        <div class="package-img"><img src="https://picsum.photos/seed/vuela-santorini/500/320" alt="Santorini, Grecia" loading="lazy"></div>
+        <span class="package-badge">Más vendido</span>
+        <div class="package-body">
+          <h3>Escapada a Santorini</h3>
+          <p class="package-meta">5 noches · Vuelo + hotel + traslados</p>
+          <ul class="package-includes">
+            <li>Vuelos directos ida y vuelta</li>
+            <li>Hotel 4★ con vistas al Caldera</li>
+            <li>Traslados aeropuerto-hotel</li>
+            <li>Desayuno incluido</li>
+          </ul>
+          <div class="package-price"><span class="price-now">459€</span><span class="price-old">620€</span></div>
+          <a href="#contacto" class="cta-button cta-button--sm"><span>reservar</span></a>
+        </div>
+      </article>
+
+      <article class="package-card reveal-up">
+        <div class="package-img"><img src="https://picsum.photos/seed/vuela-safari/500/320" alt="Safari en Kenia" loading="lazy"></div>
+        <span class="package-badge">Nuevo</span>
+        <div class="package-body">
+          <h3>Safari en Kenia</h3>
+          <p class="package-meta">8 noches · Vuelo + lodge + safari guiado</p>
+          <ul class="package-includes">
+            <li>Vuelo internacional + interno</li>
+            <li>Lodge de 4 días en Masái Mara</li>
+            <li>Safaris en 4x4 con guía</li>
+            <li>Pensión completa</li>
+          </ul>
+          <div class="package-price"><span class="price-now">1.390€</span><span class="price-old">1.690€</span></div>
+          <a href="#contacto" class="cta-button cta-button--sm"><span>reservar</span></a>
+        </div>
+      </article>
+
+      <article class="package-card reveal-up">
+        <div class="package-img"><img src="https://picsum.photos/seed/vuela-roma/500/320" alt="Roma, Italia" loading="lazy"></div>
+        <span class="package-badge">Última hora</span>
+        <div class="package-body">
+          <h3>Roma al completo</h3>
+          <p class="package-meta">4 noches · Vuelo + hotel 4★ + tour</p>
+          <ul class="package-includes">
+            <li>Vuelos directos</li>
+            <li>Hotel 4★ en el centro histórico</li>
+            <li>Tour guiado por el Coliseo</li>
+            <li>Traslados incluidos</li>
+          </ul>
+          <div class="package-price"><span class="price-now">329€</span><span class="price-old">410€</span></div>
+          <a href="#contacto" class="cta-button cta-button--sm"><span>reservar</span></a>
+        </div>
+      </article>
+
+      <article class="package-card reveal-up">
+        <div class="package-img"><img src="https://picsum.photos/seed/vuela-islandia/500/320" alt="Auroras boreales en Islandia" loading="lazy"></div>
+        <span class="package-badge">Temporada</span>
+        <div class="package-body">
+          <h3>Auroras en Islandia</h3>
+          <p class="package-meta">4 noches · Vuelo + hotel + excursión</p>
+          <ul class="package-includes">
+            <li>Vuelos directos</li>
+            <li>Hotel con acceso a piscina termal</li>
+            <li>Excursión nocturna de auroras</li>
+            <li>Coche de alquiler 2 días</li>
+          </ul>
+          <div class="package-price"><span class="price-now">699€</span><span class="price-old">870€</span></div>
+          <a href="#contacto" class="cta-button cta-button--sm"><span>reservar</span></a>
+        </div>
+      </article>
+
+      <article class="package-card reveal-up">
+        <div class="package-img"><img src="https://picsum.photos/seed/vuela-tailandia/500/320" alt="Templos de Tailandia" loading="lazy"></div>
+        <span class="package-badge">Grupo</span>
+        <div class="package-body">
+          <h3>Tailandia Esencial</h3>
+          <p class="package-meta">10 noches · Circuito guiado en grupo</p>
+          <ul class="package-includes">
+            <li>Vuelo internacional</li>
+            <li>Circuito Bangkok + Chiang Mai + islas</li>
+            <li>Guía en español todo el recorrido</li>
+            <li>Hoteles 4★ seleccionados</li>
+          </ul>
+          <div class="package-price"><span class="price-now">1.190€</span><span class="price-old">1.450€</span></div>
+          <a href="#contacto" class="cta-button cta-button--sm"><span>reservar</span></a>
+        </div>
+      </article>
+
+      <article class="package-card reveal-up">
+        <div class="package-img"><img src="https://picsum.photos/seed/vuela-portugal/500/320" alt="Costa de Portugal" loading="lazy"></div>
+        <span class="package-badge">Familias</span>
+        <div class="package-body">
+          <h3>Algarve en Familia</h3>
+          <p class="package-meta">7 noches · Apartamento + vuelo</p>
+          <ul class="package-includes">
+            <li>Vuelos directos</li>
+            <li>Apartamento con piscina</li>
+            <li>Actividades para niños incluidas</li>
+            <li>Coche de alquiler 7 días</li>
+          </ul>
+          <div class="package-price"><span class="price-now">520€</span><span class="price-old">640€</span></div>
+          <a href="#contacto" class="cta-button cta-button--sm"><span>reservar</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOSOTROS ============ -->
+<section id="nosotros" class="section">
+  <div class="plane-decor plane-decor--2" aria-hidden="true">
+    <svg viewBox="0 0 48 48" fill="none"><path d="M44 24l-14-4-8-16-4 1 4 15-12 3-4-6-3 1 3 9 3 9 3-1-2-7 12-2 2 16 4-1 2-17 14-4z" fill="currentColor"/></svg>
+  </div>
+  <div class="section-inner">
+    <span class="eyebrow">✦ Nosotros</span>
+    <h2 class="section-title reveal-up">15 años haciendo<br>las maletas contigo</h2>
+    <p class="section-lead reveal-right">Somos una agencia de viajes independiente fundada en Madrid en 2010. Conocemos cada destino de primera mano — nuestro equipo viaja constantemente para probar hoteles, rutas y experiencias antes de ofrecértelas.</p>
+
+    <div class="stats-row">
+      <div class="stat-block reveal-up">
+        <span class="stat-num" data-count="15">0</span>
+        <span class="stat-label">años de experiencia</span>
+      </div>
+      <div class="stat-block reveal-up">
+        <span class="stat-num" data-count="120">0</span>
+        <span class="stat-label">destinos activos</span>
+      </div>
+      <div class="stat-block reveal-up">
+        <span class="stat-num" data-count="9800">0</span>
+        <span class="stat-label">viajeros felices</span>
+      </div>
+      <div class="stat-block reveal-up">
+        <span class="stat-num" data-count="98">0</span>
+        <span class="stat-label">% de clientes que repiten</span>
+      </div>
+    </div>
+
+    <h3 class="team-heading reveal-up">Nuestro equipo</h3>
+    <div class="team-grid">
+      <div class="team-card reveal-up">
+        <div class="team-photo"><img src="https://picsum.photos/seed/vuela-team-carmen/300/300" alt="Carmen Iglesias" loading="lazy"></div>
+        <h4>Carmen Iglesias</h4>
+        <p class="team-role">Fundadora y directora</p>
+      </div>
+      <div class="team-card reveal-up">
+        <div class="team-photo"><img src="https://picsum.photos/seed/vuela-team-pablo/300/300" alt="Pablo Serrano" loading="lazy"></div>
+        <h4>Pablo Serrano</h4>
+        <p class="team-role">Especialista en Asia y Oceanía</p>
+      </div>
+      <div class="team-card reveal-up">
+        <div class="team-photo"><img src="https://picsum.photos/seed/vuela-team-noa/300/300" alt="Noa Ferrer" loading="lazy"></div>
+        <h4>Noa Ferrer</h4>
+        <p class="team-role">Especialista en viajes a medida</p>
+      </div>
+      <div class="team-card reveal-up">
+        <div class="team-photo"><img src="https://picsum.photos/seed/vuela-team-hugo/300/300" alt="Hugo Delgado" loading="lazy"></div>
+        <h4>Hugo Delgado</h4>
+        <p class="team-role">Atención al cliente y asistencia 24/7</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEÑAS ============ -->
+<section id="resenas" class="section section--alt">
+  <div class="section-inner">
+    <span class="eyebrow">✦ Reseñas</span>
+    <div class="reviews-head">
+      <h2 class="section-title reveal-up">Lo que dicen<br>nuestros viajeros</h2>
+      <div class="rating-summary reveal-up">
+        <span class="rating-num">4,8</span>
+        <div>
+          <div class="review-stars">★★★★★</div>
+          <span class="rating-count">Basado en 640 opiniones verificadas</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-grid">
+      <div class="review-card reveal-up">
+        <div class="review-stars">★★★★★</div>
+        <p>"Organizaron todo el viaje a Japón sin que tuviéramos que preocuparnos de nada. Perfecto de principio a fin."</p>
+        <span class="review-author">— Marta G. · Kioto</span>
+      </div>
+      <div class="review-card reveal-up">
+        <div class="review-stars">★★★★★</div>
+        <p>"El paquete a Kenia superó nuestras expectativas. El guía y el lodge, espectaculares."</p>
+        <span class="review-author">— Javier R. · Masái Mara</span>
+      </div>
+      <div class="review-card reveal-up">
+        <div class="review-stars">★★★★☆</div>
+        <p>"Muy buena relación calidad-precio en la escapada a Roma. Repetiremos seguro."</p>
+        <span class="review-author">— Lucía M. · Roma</span>
+      </div>
+      <div class="review-card reveal-up">
+        <div class="review-stars">★★★★★</div>
+        <p>"Nuestra luna de miel en Maldivas fue un sueño. El asesor entendió exactamente lo que buscábamos."</p>
+        <span class="review-author">— Diego y Ana · Maldivas</span>
+      </div>
+      <div class="review-card reveal-up">
+        <div class="review-stars">★★★★★</div>
+        <p>"Viajamos en grupo de 12 amigos y todo salió perfecto, hasta el último traslado."</p>
+        <span class="review-author">— Sara P. · Estambul</span>
+      </div>
+      <div class="review-card reveal-up">
+        <div class="review-stars">★★★★☆</div>
+        <p>"La asistencia 24h nos salvó cuando se canceló un vuelo. Nos reubicaron en menos de una hora."</p>
+        <span class="review-author">— Fernando T. · Islandia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREGUNTAS FRECUENTES ============ -->
+<section id="faq" class="section">
+  <div class="section-inner section-inner--narrow">
+    <span class="eyebrow">✦ Preguntas frecuentes</span>
+    <h2 class="section-title reveal-up">Resolvemos tus dudas</h2>
+
+    <div class="faq-list">
+      <div class="faq-item reveal-up">
+        <button type="button" class="faq-question" aria-expanded="false">
+          ¿Con cuánta antelación debo reservar?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Recomendamos reservar con al menos 6-8 semanas de antelación para vuelos y hoteles con mejor disponibilidad, aunque también gestionamos viajes de última hora.</p></div>
+      </div>
+      <div class="faq-item reveal-up">
+        <button type="button" class="faq-question" aria-expanded="false">
+          ¿Puedo modificar mi reserva una vez confirmada?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Sí, en la mayoría de casos. Las condiciones de cambio dependen de la aerolínea y el hotel; te las indicamos siempre antes de confirmar la reserva.</p></div>
+      </div>
+      <div class="faq-item reveal-up">
+        <button type="button" class="faq-question" aria-expanded="false">
+          ¿El seguro de viaje está incluido en los paquetes?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>No viene incluido por defecto, pero te lo recomendamos siempre y puedes añadirlo en el momento de la reserva por un coste adicional muy ajustado.</p></div>
+      </div>
+      <div class="faq-item reveal-up">
+        <button type="button" class="faq-question" aria-expanded="false">
+          ¿Ofrecéis facilidades de pago?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Sí, puedes reservar con un depósito del 20% y abonar el resto hasta 30 días antes de la salida, o financiar el viaje en varios plazos.</p></div>
+      </div>
+      <div class="faq-item reveal-up">
+        <button type="button" class="faq-question" aria-expanded="false">
+          ¿Qué pasa si necesito ayuda durante el viaje?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Contamos con asistencia telefónica 24/7 durante todo el viaje para cualquier incidencia: cambios de vuelo, overbooking, urgencias médicas o cualquier imprevisto.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto" class="section section--alt">
+  <div class="suitcase-decor suitcase-decor--2" aria-hidden="true">
+    <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="16" width="36" height="26" rx="4" stroke="currentColor" stroke-width="2"/><path d="M17 16v-4a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4" stroke="currentColor" stroke-width="2"/><path d="M6 26h36" stroke="currentColor" stroke-width="2"/></svg>
+  </div>
+  <div class="section-inner">
+    <span class="eyebrow">✦ Contacto</span>
+    <h2 class="section-title reveal-up">¿A dónde te llevamos?</h2>
+    <p class="section-lead reveal-right">Cuéntanos qué tienes en mente y en menos de 48h te preparamos una propuesta a medida, sin compromiso.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal-up">
+        <a class="info-row" href="tel:+34911234567"><span class="info-ic">📞</span> 91 123 45 67</a>
+        <a class="info-row" href="mailto:hola@vuela.com"><span class="info-ic">✉️</span> hola@vuela.com</a>
+        <a class="info-row" href="https://instagram.com/vuela" target="_blank" rel="noopener"><span class="info-ic">📷</span> @vuela</a>
+        <a class="info-row" href="https://maps.google.com/?q=Gran+Via+45,+Madrid" target="_blank" rel="noopener"><span class="info-ic">📍</span> Gran Vía 45, Madrid</a>
+
+        <div class="offices">
+          <div class="office-card">
+            <h4>Oficina Madrid</h4>
+            <p>Gran Vía 45, 28013<br>Lun–Vie: 9:30–19:00 · Sáb: 10:00–14:00</p>
+          </div>
+          <div class="office-card">
+            <h4>Oficina Barcelona</h4>
+            <p>Passeig de Gràcia 22, 08007<br>Lun–Vie: 9:30–19:00</p>
+          </div>
+        </div>
+      </div>
+
+      <form id="contactForm" class="contact-form reveal-up" novalidate>
+        <div class="form-row">
+          <div>
+            <input id="cName" type="text" placeholder="Tu nombre" required>
+            <span class="field-error">Cuéntanos cómo te llamas.</span>
+          </div>
+          <div>
+            <input id="cPhone" type="tel" placeholder="Teléfono (opcional)">
+          </div>
+        </div>
+        <input id="cEmail" type="email" placeholder="Tu correo" required>
+        <span class="field-error">Escribe un correo válido.</span>
+        <div class="form-row">
+          <div>
+            <input id="cDest" type="text" placeholder="Destino que te interesa">
+          </div>
+          <div>
+            <select id="cTravelers">
+              <option value="">Nº de viajeros</option>
+              <option>1 persona</option>
+              <option>2 personas</option>
+              <option>3-5 personas</option>
+              <option>Grupo (6+)</option>
+            </select>
+          </div>
+        </div>
+        <textarea id="cMessage" rows="4" placeholder="Cuéntanos tu idea de viaje" required></textarea>
+        <span class="field-error">Añade un breve mensaje.</span>
+        <button type="submit" class="cta-button"><span id="submitLabel">enviar</span></button>
+        <p class="form-note" id="formNote">Se abrirá tu correo con el mensaje ya redactado.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">Vuela.</span>
+      <p>Agencia de viajes con sede en Madrid y Barcelona desde 2010.</p>
+    </div>
+    <nav>
+      <a href="#destinos">Destinos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+  <p class="footer-copy">© <span id="year"></span> Vuela. Todos los derechos reservados.</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
